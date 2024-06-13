@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264518515047",
+    "project_id": "geekreep",
+    "storage_bucket": "geekreep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264518515047:android:051dfbf2e513e42ff797c2",
+        "android_client_info": {
+          "package_name": "com.example.base_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQuUsepGlHU6cTJ6bif_sNa5OUFjBs_Fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

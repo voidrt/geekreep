@@ -1,5 +1,5 @@
-name: base_
-description: A new Flutter project.
+name: geekreep
+description: geekreep
 
 publish_to: "none"
 
@@ -14,6 +14,11 @@ dependencies:
   flutter_riverpod: 
   shared_preferences: 
   go_router: 
+  url_launcher_android:
+  url_launcher_ios:  
+  firebase_core: 
+  firebase_auth: 
+  google_sign_in:
 
   cupertino_icons: ^1.0.2
 
