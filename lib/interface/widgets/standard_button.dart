@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:geekreep/interface/widgets/text_widgets/semibold_text.dart';
 
 class StandardButton extends StatelessWidget {
   const StandardButton({
@@ -6,14 +8,16 @@ class StandardButton extends StatelessWidget {
     required this.onTap,
     required this.text,
     this.backgroundColor,
-    this.margin,
     this.padding,
-    this.roundness = 8.0,
+    this.margin,
+    this.roundness = 50.0,
+    this.leadingIcon,
   });
 
   final Function onTap;
   final String text;
   final double roundness;
+  final String? leadingIcon;
   final Color? backgroundColor;
   final double? margin;
   final double? padding;
@@ -23,8 +27,8 @@ class StandardButton extends StatelessWidget {
     return GestureDetector(
       onTap: () => onTap(),
       child: Container(
-        padding: EdgeInsets.all(padding ?? 15),
-        margin: EdgeInsets.all(margin ?? 0),
+        padding: EdgeInsets.all(padding ?? 2),
+        margin: EdgeInsets.all(margin ?? 16),
         decoration: BoxDecoration(
           color: backgroundColor ?? Theme.of(context).colorScheme.shadow,
           borderRadius: BorderRadius.all(
@@ -32,13 +36,23 @@ class StandardButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
+          child: leadingIcon == null
+              ? TextButton(
+                  onPressed: () => onTap(),
+                  style: const ButtonStyle(
+                    splashFactory: NoSplash.splashFactory,
+                  ),
+                  child: SemiBoldStandardText(
+                    text: text,
+                  ),
+                )
+              : TextButton.icon(
+                  icon: SvgPicture.asset('assets/icons/$leadingIcon'),
+                  onPressed: () {},
+                  label: SemiBoldStandardText(
+                    text: text,
+                  ),
+                ),
         ),
       ),
     );

@@ -6,5 +6,5 @@ class Paddings {
   static const double big = 24;
   static const double veryBig = 32;
   static const double extraBig = 48;
-  static const double superDuperBig = 56;
+  static const double superUltraBig = 56;
 }

@@ -1,4 +1,5 @@
 import 'package:geekreep/interface/home/auth_check.dart';
+import 'package:geekreep/interface/user_auth/geekie/geekie_login.dart';
 import 'package:go_router/go_router.dart';
 
 class MasterNavigator {
@@ -10,6 +11,11 @@ class MasterNavigator {
         name: 'Home',
         builder: (context, state) => const HomeScreen(),
       ),
+      GoRoute(
+        path: '/login/geekie',
+        name: 'Geekie Login',
+        builder: (context, state) => const GeekieLoginScreen(),
+      )
     ],
   );
 }

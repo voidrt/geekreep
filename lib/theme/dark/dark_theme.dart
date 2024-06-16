@@ -22,5 +22,8 @@ class Dark {
       thickness: 0.5,
       color: DarkThemeColours.lightGrey,
     ),
+    buttonTheme: const ButtonThemeData(
+      splashColor: Colors.transparent,
+    ),
   );
 }

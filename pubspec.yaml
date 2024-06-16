@@ -11,14 +11,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_riverpod: 
-  shared_preferences: 
-  go_router: 
+  flutter_riverpod:
+  shared_preferences:
+  go_router:
   url_launcher_android:
-  url_launcher_ios:  
-  firebase_core: 
-  firebase_auth: 
+  url_launcher_ios:
+  firebase_core:
+  firebase_auth:
   google_sign_in:
+  flutter_svg:
 
   cupertino_icons: ^1.0.2
 
@@ -30,3 +31,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/
+  fonts:
+    - family: Exo
+      fonts:
+        - asset: assets/fonts/Exo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Exo-Semibold.ttf
+          weight: 600
+        - asset: assets/fonts/Exo-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/Exo-Light.ttf
+          weight: 200

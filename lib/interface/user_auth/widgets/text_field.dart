@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geekreep/theme/dark/colours.dart';
 import 'package:geekreep/theme/paddings.dart';
 
 class AppTextField extends StatefulWidget {

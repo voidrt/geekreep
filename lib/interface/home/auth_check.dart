@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geekreep/interface/home/layout/home_layout.dart';
-import 'package:geekreep/interface/user_auth/login_screen.dart';
+import 'package:geekreep/interface/user_auth/login_options.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, snapshot) {
         return snapshot.hasData
             ? const HomeScreenLayout()
-            : const LoginScreen();
+            : const LoginOptionsScreen();
       },
     );
   }
