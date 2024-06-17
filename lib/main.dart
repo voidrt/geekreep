@@ -2,6 +2,7 @@ import 'package:geekreep/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:geekreep/theme/dark/dark_theme.dart';
+import 'package:geekreep/theme/light/light_theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -20,7 +21,8 @@ class BaseFlutter extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: Dark.appTheme,
+      theme: Light.appTheme,
+      darkTheme: Dark.appTheme,
       routerConfig: MasterNavigator.appRouter,
       title: 'GeekReep',
     );

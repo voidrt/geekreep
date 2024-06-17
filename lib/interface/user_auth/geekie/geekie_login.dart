@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
 import 'package:geekreep/interface/user_auth/widgets/text_field.dart';
-import 'package:geekreep/interface/widgets/standard_button.dart';
+import 'package:geekreep/interface/widgets/buttons/standard_button.dart';
 import 'package:geekreep/theme/paddings.dart';
 
 class GeekieLoginScreen extends StatelessWidget {

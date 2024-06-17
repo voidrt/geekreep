@@ -1,5 +1,5 @@
 class Paddings {
-  static const double extraSmall = 6;
+  static const double extraSmall = 4;
   static const double small = 8;
   static const double medium = 12;
   static const double defaultSize = 16;

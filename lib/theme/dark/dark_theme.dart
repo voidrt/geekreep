@@ -7,20 +7,17 @@ class Dark {
     useMaterial3: true,
     platform: TargetPlatform.android,
     scaffoldBackgroundColor: DarkThemeColours.background,
-    colorScheme: ColorScheme.fromSeed(
-      brightness: Brightness.dark,
-      seedColor: DarkThemeColours.primary,
+    colorScheme: const ColorScheme.dark(
       primary: DarkThemeColours.primary,
       secondary: DarkThemeColours.secondary,
       background: DarkThemeColours.background,
       onBackground: DarkThemeColours.darkGrey,
-      inverseSurface: DarkThemeColours.textWhite,
+      surface: DarkThemeColours.textColor,
       shadow: DarkThemeColours.black,
     ),
-    dividerColor: Colors.transparent,
     dividerTheme: const DividerThemeData(
       thickness: 0.5,
-      color: DarkThemeColours.lightGrey,
+      color: DarkThemeColours.textColor,
     ),
     buttonTheme: const ButtonThemeData(
       splashColor: Colors.transparent,
