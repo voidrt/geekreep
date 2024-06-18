@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
 import 'package:geekreep/interface/user_auth/widgets/text_field.dart';
@@ -19,17 +19,18 @@ class GeekieLoginScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           fit: StackFit.expand,
           children: [
             Positioned(
               child: ImageFiltered(
                 imageFilter: ImageFilter.blur(
-                  sigmaX: 5,
-                  sigmaY: 5,
+                  sigmaX: 7,
+                  sigmaY: 7,
                 ),
                 child: Image.asset(
-                  'assets/images/loginBgMobile.jpg',
+                  'assets/images/loginBgWeb.png',
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -38,7 +39,10 @@ class GeekieLoginScreen extends StatelessWidget {
               children: [
                 const WhiteGeekieIcon(),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: Paddings.veryBig),
+                  padding: EdgeInsets.symmetric(
+                    vertical: Paddings.veryBig,
+                    horizontal: Paddings.defaultSize,
+                  ),
                   child: Align(
                     alignment: Alignment.center,
                     child: SemiBoldHeadlineText(
@@ -49,24 +53,43 @@ class GeekieLoginScreen extends StatelessWidget {
                 ),
                 AppTextField(
                   userEmail,
-                  hintText: 'Usuario',
+                  hintText: 'Nome de usuario ou email',
+                  icon: const Icon(
+                    LineIcons.user,
+                    color: Colors.white,
+                  ),
                   obscureText: false,
                 ),
                 AppTextField(
                   password,
                   hintText: 'Senha',
+                  icon: const Icon(
+                    LineIcons.lock,
+                    color: Colors.white,
+                  ),
                   obscureText: true,
+                ),
+                const SizedBox(
+                  height: Paddings.veryBig,
                 ),
                 StandardButton(
                   margin: Paddings.big,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
                   text: 'Entrar',
                   onTap: () {
-                    authHelper.loginWithEmail(
-                      email: userEmail.text,
-                      password: password.text,
-                    );
+                    try {
+                      authHelper.loginWithEmail(
+                        email: userEmail.text,
+                        password: password.text,
+                      );
+                    } catch (error) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('E-mail ou senha incorretos ($error)'),
+                        ),
+                      );
+                    }
                   },
-                  roundness: 100,
                 ),
               ],
             ),

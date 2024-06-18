@@ -15,14 +15,15 @@ class LoginOptionsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           fit: StackFit.expand,
           children: [
             Positioned(
               child: ImageFiltered(
                 imageFilter: ImageFilter.blur(
-                  sigmaX: 5,
-                  sigmaY: 5,
+                  sigmaX: 7,
+                  sigmaY: 7,
                 ),
                 child: Image.asset(
                   'assets/images/loginBgMobile.jpg',
@@ -35,7 +36,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                 const WhiteGeekieIcon(),
                 const Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: Paddings.extraBig,
+                    vertical: Paddings.veryBig,
                   ),
                   child: SemiBoldHeadlineText(
                     text: 'Acesse agora',

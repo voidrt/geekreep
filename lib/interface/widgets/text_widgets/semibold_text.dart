@@ -49,12 +49,9 @@ class SemiBoldHeadlineText extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 28,
-          fontWeight: FontWeight.w300,
-          fontFamily: 'Exo',
-          color: colour ?? Theme.of(context).colorScheme.surface,
-        ),
+        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              color: colour ?? Theme.of(context).colorScheme.surface,
+            ),
       ),
     );
   }
