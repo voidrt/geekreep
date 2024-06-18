@@ -29,7 +29,10 @@ class StandardButton extends StatelessWidget {
       onTap: () => onTap(),
       child: Container(
         padding: EdgeInsets.all(padding ?? 8),
-        margin: EdgeInsets.symmetric(horizontal: margin ?? 16, vertical: 4),
+        margin: EdgeInsets.symmetric(
+          horizontal: margin ?? Paddings.veryBig,
+          vertical: Paddings.extraSmall,
+        ),
         decoration: BoxDecoration(
           color: backgroundColor ?? Theme.of(context).colorScheme.onBackground,
           borderRadius: BorderRadius.circular(roundness),

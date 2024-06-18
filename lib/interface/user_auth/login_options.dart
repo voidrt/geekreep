@@ -1,18 +1,18 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geekreep/interface/widgets/buttons/standard_button.dart';
+import 'package:geekreep/interface/widgets/icon_widgets/white_geekie_icon.dart';
 import 'package:geekreep/interface/widgets/text_widgets/semibold_text.dart';
-import 'package:geekreep/theme/dark/colours.dart';
 import 'package:geekreep/theme/paddings.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginOptionsScreen extends StatelessWidget {
+class LoginOptionsScreen extends ConsumerWidget {
   const LoginOptionsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -32,27 +32,14 @@ class LoginOptionsScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                    top: Paddings.veryBig,
-                    bottom: Paddings.big,
-                  ),
-                  child: SvgPicture.asset(
-                    'assets/icons/logoGeekieOneBranco.svg',
-                  ),
-                ),
+                const WhiteGeekieIcon(),
                 const Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: Paddings.extraBig,
                   ),
-                  child: Text(
-                    'Acesse agora',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w300,
-                      fontFamily: 'Exo',
-                      color: DarkThemeColours.textColor,
-                    ),
+                  child: SemiBoldHeadlineText(
+                    text: 'Acesse agora',
+                    colour: Colors.white,
                   ),
                 ),
                 StandardButton(
@@ -67,9 +54,10 @@ class LoginOptionsScreen extends StatelessWidget {
                   leadingIcon: 'qrcode.svg',
                   text: 'Com QR Code - até 5º ano',
                 ),
-                const SemiBoldStandardText(
+                SemiBoldStandardText(
                   text: 'ou',
                   padding: Paddings.extraSmall,
+                  color: Theme.of(context).colorScheme.background,
                 ),
                 StandardButton(
                   onTap: () {},

@@ -20,6 +20,7 @@ dependencies:
   firebase_auth:
   google_sign_in:
   flutter_svg:
+  line_icons: 
 
   cupertino_icons: ^1.0.2
 
