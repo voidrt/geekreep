@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'package:geekreep/interface/widgets/buttons/arrow_back_icon_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
@@ -15,7 +17,6 @@ class GeekieLoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final userEmail = TextEditingController();
     final password = TextEditingController();
-    final authHelper = AuthHelper();
 
     return SafeArea(
       child: Scaffold(
@@ -37,7 +38,24 @@ class GeekieLoginScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                const WhiteGeekieIcon(),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    bottom: Paddings.big,
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: ArrowBackIconButton(),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: WhiteGeekieIcon(),
+                      ),
+                    ],
+                  ),
+                ),
                 const Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: Paddings.veryBig,
@@ -77,18 +95,10 @@ class GeekieLoginScreen extends StatelessWidget {
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   text: 'Entrar',
                   onTap: () {
-                    try {
-                      authHelper.loginWithEmail(
-                        email: userEmail.text,
-                        password: password.text,
-                      );
-                    } catch (error) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('E-mail ou senha incorretos ($error)'),
-                        ),
-                      );
-                    }
+                    AuthHelper().signInWithEmail(
+                      email: userEmail.text,
+                      password: password.text,
+                    );
                   },
                 ),
               ],

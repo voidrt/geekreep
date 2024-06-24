@@ -45,7 +45,7 @@ class LoginOptionsScreen extends ConsumerWidget {
                 ),
                 StandardButton(
                   onTap: () {
-                    context.goNamed('Geekie Login');
+                    context.pushNamed('Geekie Login');
                   },
                   leadingIcon: 'geekieOneRedLogo.svg',
                   text: 'Com uma conta Geekie One',

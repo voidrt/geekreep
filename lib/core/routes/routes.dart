@@ -9,7 +9,7 @@ class MasterNavigator {
       GoRoute(
         path: '/',
         name: 'Home',
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => const AuthenticationCheckScreen(),
       ),
       GoRoute(
         path: '/login/geekie',
