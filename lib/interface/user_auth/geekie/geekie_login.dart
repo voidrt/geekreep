@@ -1,6 +1,6 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geekreep/interface/widgets/buttons/arrow_back_icon_button.dart';
-import 'package:go_router/go_router.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:geekreep/core/provider/user_authentication_helper.dart';
@@ -90,15 +90,19 @@ class GeekieLoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: Paddings.veryBig,
                 ),
-                StandardButton(
-                  margin: Paddings.big,
-                  backgroundColor: Theme.of(context).colorScheme.primary,
-                  text: 'Entrar',
-                  onTap: () {
-                    AuthHelper().signInWithEmail(
-                      email: userEmail.text,
-                      password: password.text,
-                    );
+                ElevatedButton(
+                  child: const Text("Sign in with email+password"),
+                  onPressed: () async {
+                    try {
+                      await FirebaseAuth.instance.signInWithEmailAndPassword(
+                        email: "edbracaioli@gmail.com",
+                        password: "dudu1203",
+                      );
+                    } catch (e) {
+                      print("Error signing in user: $e");
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Error signing in user: $e")));
+                    }
                   },
                 ),
               ],

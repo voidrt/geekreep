@@ -8,7 +8,7 @@ class MasterNavigator {
     routes: [
       GoRoute(
         path: '/',
-        name: 'Home',
+        name: 'Auth Check',
         builder: (context, state) => const AuthenticationCheckScreen(),
       ),
       GoRoute(

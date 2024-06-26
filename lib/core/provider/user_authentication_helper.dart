@@ -7,7 +7,7 @@ class AuthHelper {
 
   Stream<User?> get authStateChanges => _firebaseInstance.authStateChanges();
 
-  void signInWithEmail({email, password}) async {
+  Future<void> signInWithEmail({required email, required password}) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email,
       password: password,
